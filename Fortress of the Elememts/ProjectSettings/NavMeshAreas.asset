@@ -11,7 +11,9 @@ NavMeshProjectSettings:
     cost: 1
   - name: Jump
     cost: 2
-  - name: poep
+  - name: Paars
+    cost: 1
+  - name: Groen
     cost: 1
   - name: 
     cost: 1
@@ -23,9 +25,7 @@ NavMeshProjectSettings:
     cost: 1
   - name: 
     cost: 1
-  - name: 
-    cost: 1
-  - name: 
+  - name: Bruin
     cost: 1
   - name: 
     cost: 1
