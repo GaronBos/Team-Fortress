@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1929541281420378080
+--- !u!1 &7017541261923775381
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1929541281420378085}
-  - component: {fileID: 1929541281420378084}
-  - component: {fileID: 1929541281420378087}
-  - component: {fileID: 1929541281420378086}
-  - component: {fileID: 1929541281420378106}
-  - component: {fileID: -6209741186445116062}
+  - component: {fileID: 7017541261923775388}
+  - component: {fileID: 7017541261923775391}
+  - component: {fileID: 7017541261923775390}
+  - component: {fileID: 7017541261923775377}
+  - component: {fileID: 7017541261923775376}
+  - component: {fileID: 7017541261923775379}
+  - component: {fileID: 7017541261923775378}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -21,13 +22,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1929541281420378085
+--- !u!4 &7017541261923775388
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929541281420378080}
+  m_GameObject: {fileID: 7017541261923775381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.74, y: 47.96, z: 7.7}
   m_LocalScale: {x: 0.63, y: 0.63, z: 0.63}
@@ -35,21 +36,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1929541281420378084
+--- !u!33 &7017541261923775391
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929541281420378080}
+  m_GameObject: {fileID: 7017541261923775381}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1929541281420378087
+--- !u!23 &7017541261923775390
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929541281420378080}
+  m_GameObject: {fileID: 7017541261923775381}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,39 +85,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1929541281420378086
+--- !u!135 &7017541261923775377
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929541281420378080}
+  m_GameObject: {fileID: 7017541261923775381}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1929541281420378106
+--- !u!114 &7017541261923775376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929541281420378080}
+  m_GameObject: {fileID: 7017541261923775381}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5308c9be1d107374ea62dbc316a02e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackStrenght: 100
---- !u!54 &-6209741186445116062
+  knockbackStrenght: 10
+--- !u!54 &7017541261923775379
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929541281420378080}
+  m_GameObject: {fileID: 7017541261923775381}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -126,3 +127,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7017541261923775378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7017541261923775381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f6ae10c6a4e5ad4c914df0b4d1cd680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectileSpeed: 25
+  maxProjectileDistance: 200
