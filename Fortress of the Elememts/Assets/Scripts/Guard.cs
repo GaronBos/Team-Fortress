@@ -11,7 +11,7 @@ public class Guard : MonoBehaviour
     public float speedRun = 9;                      //  Running speed
     public bool knockBack;
     Vector3 direction;
- 
+
     public float viewRadius = 15;                   //  Radius of the enemy view
     public float viewAngle = 90;                    //  Angle of the enemy view
     public LayerMask playerMask;                    //  To detect the player with the raycast
@@ -54,6 +54,7 @@ public class Guard : MonoBehaviour
         knockBack = false;
     }
  
+
     private void Update()
     {
             EnviromentView();                       //  Check whether or not the player is in the enemy's field of vision
