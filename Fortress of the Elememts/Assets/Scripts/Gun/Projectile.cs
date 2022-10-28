@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-   
+    public int damage = 20;
+        public GameObject Enemy;
+        public Health EnemyHP;
         private Vector3 FiringPoint;
 
         [SerializeField]
@@ -16,6 +18,7 @@ public class Projectile : MonoBehaviour
         void Start()
         {
             FiringPoint = transform.position;
+            EnemyHP = Enemy.GetComponent<Health>();
         }
 
         void Update()
@@ -37,12 +40,16 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        GameObject collisionGameObject = collision.gameObject;
+        if (collisionGameObject.name == "Enemy")
         {
-            collision.gameObject.GetComponent<Health>().currentHealth -= 40;
-            Destroy(this.gameObject);
+            if(collisionGameObject.GetComponent<Health>() != null)
+            {
+                collisionGameObject.GetComponent<Health>().TakeDamage(damage);
+                Destroy(gameObject);
+            }
+
+
         }
-
-
     }
 }
