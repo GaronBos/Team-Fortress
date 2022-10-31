@@ -33,10 +33,13 @@ public class Guard : MonoBehaviour
     bool m_PlayerNear;                              //  If the player is near, state of hearing
     bool m_IsPatrol;                                //  If the enemy is patrol, state of patroling
     bool m_CaughtPlayer;                            //  if the enemy has caught the player
+
+    Transform RotationLocked;
+    public float fixedRotation = 5;
  
     void Start()
     {
- 
+        RotationLocked = transform; 
         m_PlayerPosition = Vector3.zero;
         m_IsPatrol = true;
         m_CaughtPlayer = false;
@@ -53,7 +56,7 @@ public class Guard : MonoBehaviour
         navMeshAgent.SetDestination(waypoints1[m_CurrentWaypointIndex].position);    //  Set the destination to the first waypoint
         knockBack = false;
     }
- 
+
 
     private void Update()
     {
@@ -67,6 +70,8 @@ public class Guard : MonoBehaviour
         {
             Patroling();
         }
+
+        RotationLocked.eulerAngles = new Vector3(RotationLocked.eulerAngles.x, fixedRotation, RotationLocked.eulerAngles.z);
     }
 
     void FixedUpdate()

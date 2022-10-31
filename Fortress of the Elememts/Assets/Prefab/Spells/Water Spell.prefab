@@ -4707,7 +4707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  Enemy: {fileID: 0}
+  Enemy: {fileID: 6981801191687487895, guid: 22496c73cda29504eaa04b41c1287c46, type: 3}
   EnemyHP: {fileID: 0}
   ProjectileSpeed: 50
   maxProjectileDistance: 200
