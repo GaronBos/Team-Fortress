@@ -1,10 +1,11 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    private Animator animator;
     public Slider healthBar;
     public int health;
     public int maxHealth = 100;
@@ -13,18 +14,22 @@ public class Health : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(int amount)
     {
         health -= amount;
-        if(health <= 0)
-        {
-            Destroy(gameObject);
-        }
+      
     }
     void Update()
     {
        healthBar.value = health;
+
+        if (health <=0)
+        {
+            animator.SetTrigger("Death");
+            Destroy(gameObject, 3.6f);
+        }
     }
 }

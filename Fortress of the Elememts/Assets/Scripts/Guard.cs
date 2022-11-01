@@ -12,6 +12,12 @@ public class Guard : MonoBehaviour
     public bool knockBack;
     Vector3 direction;
 
+    private Animator animator;                      // allows unity to enter animator
+    public float oldPosition;                       // stores the old position (starting position)
+    public bool movingRight = false;                //
+    public bool movingLeft = false;                 //
+
+
     public float viewRadius = 15;                   //  Radius of the enemy view
     public float viewAngle = 90;                    //  Angle of the enemy view
     public LayerMask playerMask;                    //  To detect the player with the raycast
@@ -47,7 +53,11 @@ public class Guard : MonoBehaviour
         m_PlayerNear = false;
         m_WaitTime = startWaitTime;                 //  Set the wait time variable that will change
         m_TimeToRotate = timeToRotate;
- 
+
+
+        animator = GetComponent<Animator>();        // animator
+
+
         m_CurrentWaypointIndex = 0;                 //  Set the initial waypoint
         navMeshAgent = GetComponent<NavMeshAgent>();
  
@@ -72,7 +82,29 @@ public class Guard : MonoBehaviour
         }
 
         RotationLocked.eulerAngles = new Vector3(RotationLocked.eulerAngles.x, fixedRotation, RotationLocked.eulerAngles.z);
+
+        if (transform.position.x > oldPosition)
+        {
+            movingRight = true;
+            movingLeft = false;
+        }
+
+        if (transform.position.x < oldPosition)
+        {
+            movingRight = false;
+            movingLeft = true;
+        }
+
+       
     }
+
+
+    void LateUpdate()
+    {
+        oldPosition = transform.position.x;
+    }
+
+
 
     void FixedUpdate()
     {
@@ -202,6 +234,12 @@ public class Guard : MonoBehaviour
        
         navMeshAgent.isStopped = true;
         navMeshAgent.speed = 0;
+
+        movingLeft = false;
+        movingRight = false;
+
+        animator.SetTrigger("Attack");
+
     }
  
     void Move(float speed)
@@ -209,8 +247,27 @@ public class Guard : MonoBehaviour
      
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speed;
+
+       
+
+        if (m_CurrentWaypointIndex > 3 )
+        {
+            animator.SetTrigger("Run Left");
+        }
+        else
+        {
+            animator.SetTrigger("Run Right");
+        }
+
+        if(m_CurrentWaypointIndex > 9)
+        {
+            animator.SetTrigger("Run Right");
+        }
+       
     }
  
+
+
     void LookingPlayer(Vector3 player)
     {
         navMeshAgent.SetDestination(player);
