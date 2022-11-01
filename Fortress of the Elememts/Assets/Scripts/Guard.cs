@@ -35,7 +35,7 @@ public class Guard : MonoBehaviour
     bool m_CaughtPlayer;                            //  if the enemy has caught the player
 
     Transform RotationLocked;
-    public float fixedRotation = 5;
+    public float fixedRotation = 0;
  
     void Start()
     {
