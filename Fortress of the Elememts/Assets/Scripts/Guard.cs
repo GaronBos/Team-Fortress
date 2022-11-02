@@ -4,6 +4,14 @@ using UnityEngine;
 using UnityEngine.AI;
 public class Guard : MonoBehaviour
 {
+    public Transform firepoint;//spawn point of the prefab
+    public GameObject EnemySpell; //the prefab
+    float timeBetween;
+    public float startTimeBetween;
+
+
+
+
     public NavMeshAgent navMeshAgent;               //  Nav mesh agent component
     public float startWaitTime = 4;                 //  Wait time of every action
     public float timeToRotate = 2;                  //  Wait time when the enemy detect near the player without seeing
@@ -25,14 +33,14 @@ public class Guard : MonoBehaviour
     public float meshResolution = 1.0f;             //  How many rays will cast per degree
     public int edgeIterations = 4;                  //  Number of iterations to get a better performance of the mesh filter when the raycast hit an obstacule
     public float edgeDistance = 0.5f;               //  Max distance to calcule the a minumun and a maximum raycast when hits something
- 
- 
+
+
     public Transform[] waypoints1;                   //  All the waypoints where the enemy patrols
     int m_CurrentWaypointIndex;                     //  Current waypoint where the enemy is going to
- 
+
     Vector3 playerLastPosition = Vector3.zero;      //  Last position of the player when was near the enemy
     Vector3 m_PlayerPosition;                       //  Last position of the player when the player is seen by the enemy
- 
+
     float m_WaitTime;                               //  Variable of the wait time that makes the delay
     float m_TimeToRotate;                           //  Variable of the wait time to rotate when the player is near that makes the delay
     bool m_playerInRange;                           //  If the player is in range of vision, state of chasing
@@ -42,10 +50,11 @@ public class Guard : MonoBehaviour
 
     Transform RotationLocked;
     public float fixedRotation = 0;
- 
+
     void Start()
     {
-        RotationLocked = transform; 
+        timeBetween = startTimeBetween;
+        RotationLocked = transform;
         m_PlayerPosition = Vector3.zero;
         m_IsPatrol = true;
         m_CaughtPlayer = false;
@@ -60,7 +69,7 @@ public class Guard : MonoBehaviour
 
         m_CurrentWaypointIndex = 0;                 //  Set the initial waypoint
         navMeshAgent = GetComponent<NavMeshAgent>();
- 
+
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speedWalk;             //  Set the navemesh speed with the normal speed of the enemy
         navMeshAgent.SetDestination(waypoints1[m_CurrentWaypointIndex].position);    //  Set the destination to the first waypoint
@@ -70,8 +79,10 @@ public class Guard : MonoBehaviour
 
     private void Update()
     {
-            EnviromentView();                       //  Check whether or not the player is in the enemy's field of vision
- 
+
+        Spell();
+        EnviromentView();                       //  Check whether or not the player is in the enemy's field of vision
+
         if (!m_IsPatrol)
         {
             Chasing();
@@ -95,7 +106,7 @@ public class Guard : MonoBehaviour
             movingLeft = true;
         }
 
-       
+
     }
 
 
@@ -135,18 +146,18 @@ public class Guard : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         direction = collision.transform.forward; //Always knocks enemy in the direction the main character is facing
-        if (collision.gameObject.CompareTag("Bullet")){ StartCoroutine(KnockBack()); Destroy(collision.gameObject); }
+        if (collision.gameObject.CompareTag("Bullet")) { StartCoroutine(KnockBack()); Destroy(collision.gameObject); }
 
     }
 
 
     private void Chasing()
     {
-        
+
         //  The enemy is chasing the player
         m_PlayerNear = false;                       //  Set false that hte player is near beacause the enemy already sees the player
         playerLastPosition = Vector3.zero;          //  Reset the player near position
- 
+
         if (!m_CaughtPlayer)
         {
             Move(speedRun);
@@ -154,7 +165,7 @@ public class Guard : MonoBehaviour
         }
         if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)    //  Control if the enemy arrive to the player location
         {
-                if (m_WaitTime <= 0 && !m_CaughtPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
+            if (m_WaitTime <= 0 && !m_CaughtPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
             {
                 //  Check if the enemy is not near to the player, returns to patrol after the wait time delay
                 m_IsPatrol = true;
@@ -173,16 +184,16 @@ public class Guard : MonoBehaviour
             }
         }
     }
- 
+
     private void Patroling()
     {
-        
+
         if (m_PlayerNear)
         {
             //  Check if the enemy detect near the player, so the enemy will move to that position
             if (m_TimeToRotate <= 0)
             {
-                
+
                 Move(speedWalk);
                 LookingPlayer(playerLastPosition);
             }
@@ -195,7 +206,7 @@ public class Guard : MonoBehaviour
         }
         else
         {
-            
+
             m_PlayerNear = false;           //  The player is no near when the enemy is platroling
             playerLastPosition = Vector3.zero;
             navMeshAgent.SetDestination(waypoints1[m_CurrentWaypointIndex].position);    //  Set the enemy destination to the next waypoint
@@ -207,50 +218,51 @@ public class Guard : MonoBehaviour
                     NextPoint();
                     Move(speedWalk);
                     m_WaitTime = startWaitTime;
-                    
+
 
                 }
                 else
                 {
-                    
+
                     Stop();
                     m_WaitTime -= Time.deltaTime;
                 }
             }
         }
     }
- 
- 
+
+
     public void NextPoint()
     {
-          
+
         m_CurrentWaypointIndex = (m_CurrentWaypointIndex + 1) % waypoints1.Length;
         navMeshAgent.SetDestination(waypoints1[m_CurrentWaypointIndex].position);
 
     }
- 
+
     void Stop()
     {
-       
+
         navMeshAgent.isStopped = true;
         navMeshAgent.speed = 0;
 
         movingLeft = false;
         movingRight = false;
 
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("Idle");
+
 
     }
- 
+
     void Move(float speed)
     {
-     
+        timeBetween = startTimeBetween;
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speed;
 
-       
 
-        if (m_CurrentWaypointIndex > 3 )
+
+        if (m_CurrentWaypointIndex > 3)
         {
             animator.SetTrigger("Run Left");
         }
@@ -259,13 +271,13 @@ public class Guard : MonoBehaviour
             animator.SetTrigger("Run Right");
         }
 
-        if(m_CurrentWaypointIndex > 9)
+        if (m_CurrentWaypointIndex > 9)
         {
             animator.SetTrigger("Run Right");
         }
-       
+
     }
- 
+
 
 
     void LookingPlayer(Vector3 player)
@@ -288,11 +300,11 @@ public class Guard : MonoBehaviour
             }
         }
     }
- 
+
     void EnviromentView()
     {
         Collider[] playerInRange = Physics.OverlapSphere(transform.position, viewRadius, playerMask);   //  Make an overlap sphere around the enemy to detect the playermask in the view radius
- 
+
         for (int i = 0; i < playerInRange.Length; i++)
         {
             Transform player = playerInRange[i].transform;
@@ -330,4 +342,26 @@ public class Guard : MonoBehaviour
             }
         }
     }
+
+    public void Spell()
+    {
+        if (!movingLeft && !movingRight)
+        {
+
+            if (timeBetween <= 0)
+            {
+                animator.SetTrigger("Attack");
+                Instantiate(EnemySpell, firepoint.position, firepoint.rotation);
+                timeBetween = startTimeBetween;
+
+            }
+            else
+            {
+                timeBetween -= Time.deltaTime;//start counting untill next spawn
+            }
+
+        }
+    }
+
+
 }
