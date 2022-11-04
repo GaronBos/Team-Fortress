@@ -1,5 +1,5 @@
 {
-    "m_SGVersion": 2,
+    "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.GraphData",
     "m_ObjectId": "5ec715542c084f63a0568d4440fc9a76",
     "m_Properties": [
@@ -44,6 +44,12 @@
         }
     ],
     "m_Keywords": [],
+    "m_Dropdowns": [],
+    "m_CategoryData": [
+        {
+            "m_Id": "2def5f5a29b441109cc8262376399221"
+        }
+    ],
     "m_Nodes": [
         {
             "m_Id": "8794765c14eb454094c5f11d6029e240"
@@ -766,10 +772,11 @@
         "serializedMesh": {
             "m_SerializedMesh": "{\"mesh\":{\"instanceID\":0}}",
             "m_Guid": ""
-        }
+        },
+        "preventRotation": false
     },
     "m_Path": "Shader Graphs",
-    "m_ConcretePrecision": 0,
+    "m_GraphPrecision": 0,
     "m_PreviewMode": 2,
     "m_OutputNode": {
         "m_Id": ""
@@ -1520,9 +1527,13 @@
         "m_GuidSerialized": "9b5008b2-92bc-41d7-997d-36f597616d6a"
     },
     "m_Name": "VoronoiAgitation",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_2adecd9b0ee7435a9de28f9e4d77e09c",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -1633,6 +1644,54 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "2def5f5a29b441109cc8262376399221",
+    "m_Name": "",
+    "m_ChildObjectList": [
+        {
+            "m_Id": "e5da6c90b85c4693a5ccab9e4095cfdc"
+        },
+        {
+            "m_Id": "b256dc49040947648ea6aa977cc98768"
+        },
+        {
+            "m_Id": "43b8d98a96f34c968c305205739a4af6"
+        },
+        {
+            "m_Id": "5a38fb8ec6e14e60b20db52c9581b23c"
+        },
+        {
+            "m_Id": "f9391bf05ffe47239f7469b5b3cfa1a1"
+        },
+        {
+            "m_Id": "5882432f850d418ca521df18688da1bf"
+        },
+        {
+            "m_Id": "c1ceedcdaf744fc4807902d26e78e3e3"
+        },
+        {
+            "m_Id": "2adecd9b0ee7435a9de28f9e4d77e09c"
+        },
+        {
+            "m_Id": "74997ea6bc884257a4bc75404e073967"
+        },
+        {
+            "m_Id": "c1386a99d89a47e5aea11392a83f91e6"
+        },
+        {
+            "m_Id": "f5e84fa9839e4c998e38630d3de1f812"
+        },
+        {
+            "m_Id": "31aefa5385fc46c9a5870dfd912f69a3"
+        },
+        {
+            "m_Id": "4a46afd0d1fe4770b4e72be28ab4bec3"
+        }
+    ]
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.GroupData",
     "m_ObjectId": "2eae0d38619744819e79547865efab50",
     "m_Title": "EMISSION VORONOI",
@@ -1694,9 +1753,13 @@
         "m_GuidSerialized": "aefe441c-b113-4b31-b528-c5348c1042a4"
     },
     "m_Name": "TransparencyMask",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_31aefa5385fc46c9a5870dfd912f69a3",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -2028,9 +2091,13 @@
         "m_GuidSerialized": "ce96c759-950b-4cd3-90d6-c595c19dc582"
     },
     "m_Name": "Metallic",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_43b8d98a96f34c968c305205739a4af6",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -2156,9 +2223,13 @@
         "m_GuidSerialized": "e7e0cbe4-b277-4052-bb5d-c59bff372b20"
     },
     "m_Name": "Transparency",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_4a46afd0d1fe4770b4e72be28ab4bec3",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -2393,9 +2464,13 @@
         "m_GuidSerialized": "5ec5a6a3-158b-4f71-a3d0-87357b3744dc"
     },
     "m_Name": "VoronoiPower",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_5882432f850d418ca521df18688da1bf",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -2454,9 +2529,13 @@
         "m_GuidSerialized": "957301b9-4a80-4b9a-a83a-b41070716b7a"
     },
     "m_Name": "NormalsStrength",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_5a38fb8ec6e14e60b20db52c9581b23c",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -2592,17 +2671,23 @@
 }
 
 {
-    "m_SGVersion": 0,
+    "m_SGVersion": 1,
     "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalTarget",
     "m_ObjectId": "6172a505cb314e168df80ff4683dea3e",
     "m_ActiveSubTarget": {
         "m_Id": "c7599f5082ba49648944efbe570b8da5"
     },
+    "m_AllowMaterialOverride": false,
     "m_SurfaceType": 1,
+    "m_ZTestMode": 4,
+    "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
-    "m_TwoSided": false,
+    "m_RenderFace": 2,
     "m_AlphaClip": false,
-    "m_CustomEditorGUI": ""
+    "m_CastShadows": true,
+    "m_ReceiveShadows": true,
+    "m_CustomEditorGUI": "",
+    "m_SupportVFX": false
 }
 
 {
@@ -3053,9 +3138,13 @@
         "m_GuidSerialized": "02057264-a65c-46d1-853a-95927f681b54"
     },
     "m_Name": "VoronoiTiling",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector2_74997ea6bc884257a4bc75404e073967",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -3784,9 +3873,13 @@
         "m_GuidSerialized": "527c0083-ab7d-431e-90ba-5aed8c81dc4f"
     },
     "m_Name": "Smoothness",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_b256dc49040947648ea6aa977cc98768",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -4235,9 +4328,13 @@
         "m_GuidSerialized": "84e3fdef-2603-49e7-9991-89a5a98bf81a"
     },
     "m_Name": "VoronoiSpeed",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector2_c1386a99d89a47e5aea11392a83f91e6",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -4288,9 +4385,13 @@
         "m_GuidSerialized": "df19eb3c-e7cd-445a-b122-5873577ed06d"
     },
     "m_Name": "VoronoiScale",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_c1ceedcdaf744fc4807902d26e78e3e3",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -4777,9 +4878,13 @@
         "m_GuidSerialized": "7259579c-7e56-43ea-8824-e80cb37bd429"
     },
     "m_Name": "BaseColor",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Color_e5da6c90b85c4693a5ccab9e4095cfdc",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -4790,6 +4895,7 @@
         "b": 1.0,
         "a": 1.0
     },
+    "isMainColor": false,
     "m_ColorMode": 1
 }
 
@@ -5120,9 +5226,13 @@
         "m_GuidSerialized": "cab3ae4c-e9fd-414d-a2eb-9e19b67c480a"
     },
     "m_Name": "NormalsSpeed",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector2_f5e84fa9839e4c998e38630d3de1f812",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -5194,9 +5304,13 @@
         "m_GuidSerialized": "cdc3a6b5-a239-4fd4-996d-3f093fc695d3"
     },
     "m_Name": "VoronoiColor",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Color_f9391bf05ffe47239f7469b5b3cfa1a1",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -5207,6 +5321,7 @@
         "b": 1.0,
         "a": 1.0
     },
+    "isMainColor": false,
     "m_ColorMode": 1
 }
 

@@ -9,7 +9,7 @@ public class Guard : MonoBehaviour
     float timeBetween;
     public float startTimeBetween;
 
-
+    public Transform Player;
 
 
     public NavMeshAgent navMeshAgent;               //  Nav mesh agent component
@@ -79,7 +79,7 @@ public class Guard : MonoBehaviour
 
     private void Update()
     {
-
+        this.gameObject.transform.LookAt(Player);
         Spell();
         EnviromentView();                       //  Check whether or not the player is in the enemy's field of vision
 
