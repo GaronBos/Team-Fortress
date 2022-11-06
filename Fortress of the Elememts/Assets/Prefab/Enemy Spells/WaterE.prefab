@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 244082754892187580}
   m_RootOrder: 1
@@ -39,19 +40,19 @@ ParticleSystem:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244082753323789665}
-  serializedVersion: 7
+  serializedVersion: 8
   lengthInSec: 3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
+  emitterVelocityMode: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
-  useRigidbodyForVelocity: 1
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -457,6 +458,7 @@ ParticleSystem:
         m_RotationOrder: 0
     randomizeRotationDirection: 0
     maxNumParticles: 200
+    customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -4447,6 +4449,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
@@ -4477,6 +4480,7 @@ ParticleSystemRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_RenderMode: 0
+  m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 1
@@ -4500,6 +4504,10 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
+  m_MeshWeighting: 1
+  m_MeshWeighting1: 1
+  m_MeshWeighting2: 1
+  m_MeshWeighting3: 1
   m_MaskInteraction: 0
 --- !u!1 &244082753397006231
 GameObject:
@@ -4528,6 +4536,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 244082754892187580}
   m_RootOrder: 2
@@ -4573,6 +4582,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 244082754892187580}
   m_RootOrder: 3
@@ -4604,10 +4614,10 @@ GameObject:
   - component: {fileID: 244082754406669480}
   - component: {fileID: 244082754406669524}
   - component: {fileID: 244082754406669481}
-  - component: {fileID: 244082754406669482}
   - component: {fileID: 244082754406669483}
+  - component: {fileID: -8846496294251515014}
   m_Layer: 6
-  m_Name: Water Spell
+  m_Name: WaterE
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4623,6 +4633,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.66, y: 47.72, z: -0.48}
   m_LocalScale: {x: 1.5571787, y: 1.5311699, z: 1.4312035}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 244082754892187580}
   m_Father: {fileID: 0}
@@ -4647,6 +4658,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -4688,29 +4700,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 14
+  m_Constraints: 126
   m_CollisionDetection: 1
---- !u!114 &244082754406669482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244082754406669525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f6ae10c6a4e5ad4c914df0b4d1cd680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 20
-  Enemy: {fileID: 6981801191687487895, guid: 22496c73cda29504eaa04b41c1287c46, type: 3}
-  EnemyHP: {fileID: 0}
-  ProjectileSpeed: 50
-  maxProjectileDistance: 200
 --- !u!135 &244082754406669483
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4724,6 +4719,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.74
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8846496294251515014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244082754406669525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e842a82ef538df45863fe5d14491d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectileSpeed: 50
+  maxProjectileDistance: 200
 --- !u!1 &244082754892187582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4751,6 +4760,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.3504047, y: -31.165714, z: 0.33538207}
   m_LocalScale: {x: 0.64218706, y: 0.6530954, z: 0.69871265}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 244082755018448248}
   - {fileID: 244082753323789664}
@@ -4804,6 +4814,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.66, y: 47.72, z: -0.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 244082754892187580}
   m_RootOrder: 0

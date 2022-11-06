@@ -5,11 +5,13 @@ using UnityEngine.AI;
 public class Guard : MonoBehaviour
 {
     public Transform firepoint;//spawn point of the prefab
-    public GameObject EnemySpell; //the prefab
+    
     float timeBetween;
     public float startTimeBetween;
 
     public Transform Player;
+
+    public GameObject[] EnemySpellsToInstantiate;
 
 
     public NavMeshAgent navMeshAgent;               //  Nav mesh agent component
@@ -53,6 +55,8 @@ public class Guard : MonoBehaviour
 
     void Start()
     {
+        
+        
         timeBetween = startTimeBetween;
         RotationLocked = transform;
         m_PlayerPosition = Vector3.zero;
@@ -349,9 +353,10 @@ public class Guard : MonoBehaviour
         {
 
             if (timeBetween <= 0)
-            {
+            { 
                 animator.SetTrigger("Attack");
-                Instantiate(EnemySpell, firepoint.position, firepoint.rotation);
+                int n = Random.Range(0,EnemySpellsToInstantiate.Length);
+                GameObject S = Instantiate(EnemySpellsToInstantiate[n], firepoint.position, firepoint.rotation);
                 timeBetween = startTimeBetween;
 
             }

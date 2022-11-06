@@ -4943,7 +4943,7 @@ GameObject:
   - component: {fileID: -8932688756133993587}
   - component: {fileID: 6279108550989097407}
   m_Layer: 0
-  m_Name: Fire Spell
+  m_Name: FireE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
