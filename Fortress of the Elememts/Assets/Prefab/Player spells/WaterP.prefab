@@ -4617,7 +4617,7 @@ GameObject:
   - component: {fileID: 244082754406669481}
   - component: {fileID: -6850227394634541343}
   - component: {fileID: 5627111309127395049}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: WaterP
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -4633,7 +4633,7 @@ Transform:
   m_GameObject: {fileID: 244082754406669525}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.66, y: 47.72, z: -0.48}
-  m_LocalScale: {x: 1.5571787, y: 1.5311699, z: 1.4312035}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 244082754892187580}

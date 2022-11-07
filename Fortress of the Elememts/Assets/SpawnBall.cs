@@ -6,14 +6,19 @@ using UnityEngine.InputSystem;
 public class SpawnBall : MonoBehaviour
 {
     public Transform SpellSpawn;
-    public GameObject Spell;
+    public GameObject FireSpell;
     public InputActionReference toggleReference = null;
+    //public GameObject[] PlayerSpellsToInstantiate;
 
     private void Awake()
     {
         toggleReference.action.started += Toggle;
     }
-
+    
+    void Update()
+    {
+        transform.position = SpellSpawn.position;
+    }
 
 
     private void OnDestroy()
@@ -23,15 +28,16 @@ public class SpawnBall : MonoBehaviour
 
     private void Toggle(InputAction.CallbackContext context)
     {
-
-        Instantiate(Spell,transform.position,transform.rotation);
+        //int n = Random.Range(0,PlayerSpellsToInstantiate.Length);
+        //GameObject S = Instantiate(PlayerSpellsToInstantiate[n], SpellSpawn.position, SpellSpawn.rotation);
+        Instantiate(FireSpell,transform.position,transform.rotation);
         
     }
 
 
     private void Start()
     {
-        transform.position = SpellSpawn.position;
+        
     }
 
 }

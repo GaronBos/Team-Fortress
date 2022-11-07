@@ -4617,9 +4617,9 @@ GameObject:
   - component: {fileID: 244082754406669483}
   - component: {fileID: -8846496294251515014}
   - component: {fileID: -1252204331354750995}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: WaterE
-  m_TagString: Bullet
+  m_TagString: ESpell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
